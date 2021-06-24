@@ -27,6 +27,67 @@
           </div>
 
           <div class="field">
+            <%= f.label :last_name, class: "label" %>
+            <p class="control has-icons-left">
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", :placeholder=> "lasi_name", class: "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <%= f.label :first_name, class: "label" %>
+            <p class="control has-icons-left">
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", :placeholder=> "first_name", class: "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <%= f.label :furigana_last, class: "label" %>
+            <p class="control has-icons-left">
+              <%= f.text_field :furigana_last, autofocus: true, autocomplete: "furigana_last", :placeholder=> "furigana_last", class: "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <%= f.label :furigana_first, class: "label" %>
+            <p class="control has-icons-left">
+              <%= f.text_field :furigana_first, autofocus: true, autocomplete: "furigana_first", :placeholder=> "furigana_first", class: "input" %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <%= f.label :date_of_birth, class: "label" %>
+            <p class="icon has-icons-left">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+          <div class='input-birth-wrap'>
+            <%= raw sprintf(
+                      f.date_select(
+                        :date_of_birth,
+                        class:'select-birth',
+                        id:"birth-date",
+                        use_month_numbers: true,
+                        prompt:'--',
+                        start_year: 1930,
+                        end_year: (Time.now.year -5),
+                        date_separator: '%s'),
+                        "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+          </div>
+
+          <div class="field">
             <%= f.label :email, class: "label" %>
             <p class="control has-icons-left">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "email", class: "input" %>
